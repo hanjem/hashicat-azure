@@ -16,10 +16,6 @@ provider "azurerm" {
       prevent_deletion_if_contains_resources = false
     }
   }
-  tags = {
-    Department = "devops"
-    Billable = "true"
-  }
 }
 
 resource "azurerm_resource_group" "myresourcegroup" {
@@ -137,14 +133,10 @@ resource "azurerm_linux_virtual_machine" "catapp" {
 
   }
 
-<<<<<<< HEAD
-  tags = {}
-=======
   tags = {
     Department  = "devops"
     Billable    = "true"
   }
->>>>>>> a0372ce7fb197f8a1c8b84564e31063c7ce127be
 
   # Added to allow destroy to work correctly.
   depends_on = [azurerm_network_interface_security_group_association.catapp-nic-sg-ass]
