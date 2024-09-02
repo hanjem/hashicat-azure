@@ -16,6 +16,10 @@ provider "azurerm" {
       prevent_deletion_if_contains_resources = false
     }
   }
+    tags = {
+    Department = "devops"
+    Billable = "true"
+  }
 }
 
 resource "azurerm_resource_group" "myresourcegroup" {
